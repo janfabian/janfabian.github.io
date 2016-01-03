@@ -1,0 +1,30 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+gems:                [jekyll-paginate, jekyll-gist]
+
+# Setup
+title:               Jan Fabián
+tagline:             ""
+url:                 http://janfabian.cz
+paginate:            1
+baseurl:             ""
+exclude:			 [examples]
+paginate: 5
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# About/contact
+author:
+  name:              Jan Fabian
+
+# Custom vars
+version:             2.0.0
+github:
+  repo:              https://github.com/poole/poole

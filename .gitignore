@@ -1,0 +1,4 @@
+_site/
+examples/
+.sass-cache/
+.jekyll-metadata
