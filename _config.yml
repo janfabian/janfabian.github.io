@@ -7,7 +7,7 @@ gems:                [jekyll-paginate, jekyll-gist]
 # Setup
 title:               Jan Fabián
 tagline:             ""
-url:                 http://janfabian.cz
+url:                 http://terezasvarcova.cz
 paginate:            1
 baseurl:             ""
 exclude:			 [examples]
