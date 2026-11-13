@@ -1,33 +1,35 @@
----
-layout: default
-title: Home
----
-
-<div class="posts">
-  {% for post in paginator.posts %}
-  <article class="post">
-    <!-- <h1 class="post-title">
-      <a href="{{ site.baseurl }}{{ post.url }}">
-        {{ post.title }}
-      </a>
-    </h1>
-
-    <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time> -->
-
-    {{ post.content }}
-  </article>
-  {% endfor %}
-</div>
-
-<!-- <div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    <a class="pagination-item newer" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div> -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UTC</title>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body {
+      display: grid;
+      place-items: center;
+      background: #fff;
+      color: #111;
+      font: 300 clamp(2.5rem, 12vw, 9rem)/1 ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-variant-numeric: tabular-nums;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background: #111; color: #eee; }
+    }
+  </style>
+</head>
+<body>
+  <time id="t">--:--:--</time>
+  <script>
+    const t = document.getElementById("t");
+    function tick() {
+      const now = new Date();
+      t.textContent = now.toISOString().slice(11, 19);
+      t.dateTime = now.toISOString();
+      setTimeout(tick, 1000 - now.getMilliseconds());
+    }
+    tick();
+  </script>
+</body>
+</html>
